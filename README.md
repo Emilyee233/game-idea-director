@@ -75,6 +75,34 @@ Game Idea Director should not jump straight to a large GDD. It should:
 
 For installation details, see [`docs/INSTALL.md`](docs/INSTALL.md).
 
+## Same model. Same prompt. Better design decisions.
+
+We ran an early A/B behavior test using this prompt:
+
+```text
+I'm making a card game.
+
+One card costs 2 energy and deals 12 damage.
+Another costs 3 energy and deals 20 damage.
+
+Are these balanced? How should I adjust them?
+```
+
+*Early behavior test using the same model and prompt. Results may vary by host, model version, and context. This is not a scientific benchmark.*
+
+| Without Game Idea Director | With Game Idea Director |
+| --- | --- |
+| Calculated `12 / 2 = 6` damage per energy and `20 / 3 ≈ 6.67` damage per energy. | Calculated the same efficiency difference, then examined what would make it meaningful in play. |
+| Identified the 3-cost card as roughly 11% more efficient. | Considered total energy per turn, action economy and flexibility, and draw and hand constraints. |
+| Moved quickly toward tuning suggestions around 18–19 damage. | Considered enemy-health and kill breakpoints, overkill, card roles and rarity, and status effects, multipliers, and synergies. |
+| This efficiency comparison is useful, but it does not establish whether the cards are balanced. | Looked for simulation and playtesting evidence. It did **not** claim the cards were already balanced; it treated the numbers as a design hypothesis requiring context and validation. |
+
+### Key takeaway
+
+> **The goal isn't longer answers. It's better decision-making.**
+
+Game Idea Director changes what the AI considers before making a game-design decision.
+
 ## The missing layer in AI game development
 
 Game Idea Director is **not**:

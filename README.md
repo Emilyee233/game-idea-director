@@ -39,6 +39,42 @@ Codex / Claude Code / Other Agents
 Playable Prototype
 ```
 
+## Quick Start
+
+### Install
+
+Install the entire `game-idea-director` folder—not just `SKILL.md`—in the Skills directory of an agent that supports Agent Skills or a compatible `SKILL.md` workflow.
+
+For Codex, use its Skill installation mechanism or place the folder in its Skills directory. On other platforms, follow that platform's documented process for compatible Agent Skills or `SKILL.md` workflows.
+
+### Invoke
+
+In Codex:
+
+```text
+$game-idea-director
+```
+
+### Try it
+
+```text
+I have an idea for a game about running a magical hotel,
+but I don't know what the actual gameplay should be.
+This is my first game.
+```
+
+### What should happen
+
+Game Idea Director should not jump straight to a large GDD. It should:
+
+- distinguish theme from gameplay;
+- explore meaningfully different gameplay directions;
+- explain their trade-offs;
+- recommend a direction;
+- propose the smallest useful prototype and the question it should validate.
+
+For installation details, see [`docs/INSTALL.md`](docs/INSTALL.md).
+
 ## The missing layer in AI game development
 
 Game Idea Director is **not**:
